@@ -13,7 +13,7 @@ export default function Ruleset() {
           <h2 className="section-heading">Regolamento</h2>
           <div className="pdf-container">
             <iframe
-              src="/Regolamento2024.pdf"
+              src="./public/Regolamento2024.pdf"
               title="Regolamento"
               className="ruleset-pdf"
               allowFullScreen
