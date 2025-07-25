@@ -8,7 +8,7 @@ import Leaderboard from './Leaderboard.jsx';
 import Tournaments from './Tournaments.jsx';
 import TournamentLeaderboard from './TournamentLeaderboard.jsx';
 //import Home from './Home.jsx';
-import './index.css'
+import './CSS/index.css'
 import Ruleset from './Ruleset.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
