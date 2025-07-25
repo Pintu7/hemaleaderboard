@@ -1,0 +1,120 @@
+.ruleset-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 38px 12px 60px 12px;
+  color: #fff;
+}
+
+.ruleset-title {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 36px;
+  letter-spacing: 0.03em;
+}
+
+/* Section headings stile uniforme grigi */
+.section-heading {
+  color: #d9d9d9;
+  font-weight: 700;
+  margin-bottom: 18px;
+  font-size: 1.38em;
+  letter-spacing: .01em;
+}
+
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+  overflow: visible;
+}
+
+/* PDF in formato A4, sempre verticale centrato */
+.ruleset-pdf {
+  width: 700px;
+  height: 990px;
+  max-width: 96vw;
+  max-height: 90vh;
+  aspect-ratio: 1/1.414;
+  border: none;
+  border-radius: 15px;
+  background: #181a2c;
+  box-shadow: 0 8px 34px #18182f44, 0 2px 7px #1112  inset;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .ruleset-pdf {
+    width: 97vw;
+    height: calc(97vw * 1.414);
+    min-width: 220px;
+    min-height: 320px;
+    max-width: 99vw;
+    max-height: 75vw;
+  }
+}
+
+/* FAQ */
+
+.faq-section {
+  margin-top: 36px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.faq-list details {
+  background: #20213a;
+  border-radius: 14px;
+  padding: 15px 22px 12px 20px;
+  font-size: 1.07em;
+  box-shadow: 0 2px 12px #14142a23;
+  border: 1.5px solid #23233d;
+  transition: background 0.14s, border 0.15s;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #ededed;
+  font-size: 1.09em;
+  outline: none;
+  letter-spacing: 0.01em;
+  background: none;
+  border-radius: 8px;
+  padding: 0;
+  transition: color 0.13s;
+}
+.faq-list details[open] summary {
+  color: #fff;
+}
+
+.faq-list details[open] {
+  background: #232345;
+  border-color: #363661;
+}
+
+.faq-list details div {
+  color: #ededed;
+  margin-top: 9px;
+  font-size: 0.98em;
+}
+
+@media (max-width: 700px) {
+  .ruleset-page {
+    padding: 10px 1vw 30px 1vw;
+  }
+  .ruleset-pdf {
+    width: 98vw;
+    height: calc(98vw * 1.414);
+    min-width: 160px;
+    min-height: 170px;
+  }
+  .faq-list details {
+    font-size: 1em;
+    padding: 11px 9px 7px 11px;
+  }
+}

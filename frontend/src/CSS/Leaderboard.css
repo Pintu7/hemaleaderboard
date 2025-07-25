@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #262735;
+  color: #fff;
+}
+
+.leaderboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 64px;
+  margin-right: 24px;
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 6px 12px;
+  transition: color .15s;
+}
+nav .active {
+  background: #393b51;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background: #392b2b;
+  border-radius: 50%;
+}
+
+/* FILTRI AVANZATI */
+.leaderboard-filters-row {
+  display: flex;
+  gap: 36px;
+  align-items: flex-end;
+  margin: 28px 0 24px 0;
+  flex-wrap: wrap;
+}
+
+.filter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 8px;
+}
+
+.filter-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 6px;
+  margin-left: 2px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: none;
+  background: #323245;
+  color: #ccc;
+  font-size: 1em;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-btn.selected {
+  background: #fff;
+  color: #262735;
+  font-weight: 700;
+}
+.year-select {
+  background-color: #2a2b40;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-top: 22px;
+  height: 40px;
+}
+
+/* === PODIO === */
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 36px 0 38px 0;
+}
+.podium-place {
+  background: #20213a;
+  border-radius: 18px;
+  padding: 20px 14px 16px 14px;
+  min-width: 215px;
+  text-align: center;
+  box-shadow: 0 1px 12px #18182f55;
+  position: relative;
+  color: #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.podium-place.place-1 {
+  margin-bottom: 32px;
+  box-shadow: 0 6px 20px #3f51b560;
+  z-index: 2;
+  transform: scale(1.07);
+  border: 2px solid #fff;
+}
+.podium-place.place-2 {
+  margin-bottom: 12px;
+  z-index: 1;
+  border: 1.2px solid #bcbcbc;
+}
+.podium-place.place-3 {
+  margin-bottom: 6px;
+  z-index: 1;
+  border: 1.2px solid #888;
+}
+
+.avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 9px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #323245;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+  border: 3px solid #44495e;
+}
+.avatar-placeholder.first {
+  background: #fff;
+  color: #262735;
+  border-color: #fff;
+  width: 80px;
+  height: 80px;
+  font-size: 2.2em;
+}
+.avatar-placeholder.second {
+  background: #bcbcbc;
+  color: #262735;
+  border-color: #bcbcbc;
+}
+.avatar-placeholder.third {
+  background: #888;
+  color: #ededed;
+  border-color: #888;
+}
+
+.position-cup {
+  font-size: 1.4em;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gold { color: #fff; text-shadow: 0 0 2px #eee, 0 1px 8px #fff4; }
+.silver { color: #bcbcbc; }
+.bronze { color: #888; }
+.podium-athlete-name {
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 1.12em;
+  letter-spacing: .01em;
+  color: #ededed;
+}
+
+.podium-place .points {
+  font-size: 1.10em;
+  font-weight: 500;
+  color: #cbcbcb;
+  margin: 7px 0 4px 0;
+}
+.podium-place .athlete-club {
+  font-size: 1em;
+  color: #bcbcbc;
+  margin-bottom: 4px;
+}
+
+.top-stages {
+  list-style: decimal;
+  margin: 9px 0 0 0;
+  padding: 0 0 0 24px;
+  color: #ededed;
+  font-size: 0.97em;
+  text-align: left;
+}
+.top-stages li {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* CHIP per i link tappe */
+.stage-chip {
+  display: inline-block;
+  background: #262c47;
+  color: #82b8ff;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 4px 13px;
+  margin: 0 5px 5px 0;
+  font-size: 0.97em;
+  text-decoration: none;
+  box-shadow: 0 1px 4px #1e1e3122;
+  border: 1.5px solid #375c87;
+  transition: background 0.15s, color 0.15s, border 0.15s;
+}
+.stage-chip:hover,
+.stage-chip:focus {
+  background: #3b4a75;
+  color: #bfdcff;
+  border: 1.5px solid #549cff;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+.best-perfs-cell .stage-chip {
+  margin-bottom: 3px;
+  margin-right: 6px;
+  font-size: 0.95em;
+}
+
+/* TABELLA CLASSIFICA */
+.leaderboard-table-section {
+  margin: 20px 0 60px 0;
+}
+.leaderboard-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+.leaderboard-table th, .leaderboard-table td {
+  padding: 8px 14px;
+  text-align: left;
+}
+.leaderboard-table th {
+  background: #20213a;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1em;
+  border-radius: 8px 8px 0 0;
+}
+.leaderboard-table tbody tr {
+  background: #171731;
+  border-radius: 8px;
+}
+.leaderboard-table td {
+  color: #ededed;
+  font-size: 1em;
+  border-top: 1px solid #24244461;
+}
+.best-perfs-cell {
+  max-width: 260px;
+  white-space: normal;
+  word-break: break-word;
+}
+.initials {
+  background: #323245;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  font-weight: 700;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 32px;
+  margin-right: 10px;
+}
+.club {
+  font-size: 0.93em;
+  color: #bcbcbc;
+  margin-left: 8px;
+}
+
+/* n premi con coppe differenti */
+.prize-icon {
+  font-size: 1.11em;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+.prize-icon.gold { filter: none; }
+.prize-icon.silver { filter: grayscale(1) brightness(1.5); }
+.prize-icon.bronze { filter: brightness(0.88) sepia(0.9) hue-rotate(-30deg) saturate(1.8); }
+
+::-webkit-scrollbar {
+  background: #20213a;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #393b51;
+  border-radius: 5px;
+}
