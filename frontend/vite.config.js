@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   // Copia il file di configurazione Azure SWA
-  copyFileSync('staticwebapp.config.json', 'dist/staticwebapp.config.json')
+  copyFileSync('./staticwebapp.config.json', 'dist/staticwebapp.config.json')
 
   return {
     plugins: [react()],
