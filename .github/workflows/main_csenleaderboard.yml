@@ -1,42 +1,43 @@
-name: Build and deploy Python app to Azure Web App - hemaleaderboard
-- name: Login to Azure
-	uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_94C87C3EAEC84646A3EC98B6A20638F3 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_135E70B1B93146428BB2541642D2E2E9 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_75FF63FB8F9940BFB5E16478E983E2A7 }}
+name: Build and deploy Flask app to Azure Web App
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout GitHub repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
 
-      - name: Install dependencies from backend/
+      - name: Install backend dependencies
         run: |
           cd backend
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Upload artifact for deployment
-        run: echo "Nothing to upload. Code will be deployed from repository."
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_94C87C3EAEC84646A3EC98B6A20638F3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_135E70B1B93146428BB2541642D2E2E9 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_75FF63FB8F9940BFB5E16478E983E2A7 }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: csenleaderboard  # <-- Sostituiscilo con il nome esatto del tuo App Service
-          slot-name: Production
+          app-name: hemaleaderboard             # <-- Sostituiscilo con il nome esatto del tuo App Service
           package: ./backend
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
