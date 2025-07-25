@@ -38,6 +38,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: hemaleaderboard             # <-- Sostituiscilo con il nome esatto del tuo App Service
+          app-name: csenleaderboard # <-- Sostituiscilo con il nome esatto del tuo App Service
           package: ./backend
 
