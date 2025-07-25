@@ -1,13 +1,21 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-import { copyFileSync } from 'fs'
+import { copyFileSync, existsSync } from 'fs'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
-  // Copia il file di configurazione Azure SWA
-  copyFileSync('./staticwebapp.config.json', 'dist/staticwebapp.config.json')
+  // ✅ Solo se esiste, copia il file nella build finale
+  const sourceConfigPath = './staticwebapp.config.json'
+  const destConfigPath = './dist/staticwebapp.config.json'
+
+  if (existsSync(sourceConfigPath)) {
+    copyFileSync(sourceConfigPath, destConfigPath)
+    console.log('✅ staticwebapp.config.json copied into dist/')
+  } else {
+    console.warn('⚠️ staticwebapp.config.json not found during build')
+  }
 
   return {
     plugins: [react()],
